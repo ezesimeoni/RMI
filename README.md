@@ -4,7 +4,7 @@
 ### Dependências
 * [Python 2.7](https://www.python.org/download/releases/2.7/)
 * [Matplotlib](https://matplotlib.org/)
-* Criar uma pasta chamada "output" no path onde o codigo se encontra
+* Criar uma pasta chamada "output" no path onde o código se encontra
 
 ### Variaveis que podem ser alteradas
 ```
@@ -42,6 +42,7 @@ roslaunch turtlebot_stage turtlebot_stage.lauch
 ```
 3. Rode o código pf_rmi_17.py
 ```
+cd /para/pasta/onde/esta/codigo
 python pf_rmi_17.py
 ```
 4. Insira goals para o robo e veja o filtro de partículas se movendo <br/><t/>Obs. Para uma melhor visualização deve-se remover o PoseArray AMCL carregado por default em Stage mode
