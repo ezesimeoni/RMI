@@ -1,7 +1,7 @@
 # RMI
 
 ## ParticleFilterSimple
-### Prerequisitos para rodar
+### Dependências
 * [Python 2.7](https://www.python.org/download/releases/2.7/)
 * [Matplotlib](https://matplotlib.org/)
 * Criar uma pasta chamada "output" no path onde o codigo se encontra
@@ -18,16 +18,30 @@ Para executar basta adicionar ao terminal o comando
 ```
 python particlefiltersimple.py
 ```
-Voce podera acompanhar a execucao pela criacao das imagens na pasta output
-- O output tera imagens como a do [Gif](https://imgflip.com/gif/211geq) aqui mostrado
+Você podera acompanhar a execução pela criação das imagens na pasta output
+- O output terá imagens como a do <b>[Gif](https://imgflip.com/gif/211geq) aqui mostrado</b>
 
 
 ## ParticleFilterROS
-### Prerequisitos para rodar
+### Dependências
 * [Python 2.7](https://www.python.org/download/releases/2.7/)
 * [ROS Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 * [Gazebo 6](http://gazebosim.org/download)
 * [Rviz](http://wiki.ros.org/rviz)
 
 ### Executando
-Sera necessario iniciar o Gazebo
+<i>Especificamente neste exemplo usaremos o Turtlebot porém o código pode ser rodado com qualquer robo que tenha odômetria e um laser instalado</i>
+
+1. Inicie o Turtlebot em Stage
+```
+roslaunch turtlebot_stage turtlebot_stage.lauch
+```
+2. Dentro do Rviz adicione um novo PoseArray e preencha o tópico com
+```
+/pointcloud_rmi
+```
+3. Rode o código pf_rmi_17.py
+```
+python pf_rmi_17.py
+```
+4. Insira goals para o robo e veja o filtro de partículas se movendo <br/><t/>Obs. Para uma melhor visualização deve-se remover o PoseArray AMCL carregado por default em Stage mode
