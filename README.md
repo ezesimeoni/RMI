@@ -40,7 +40,7 @@ Você podera acompanhar a atualização do filtro pela criação das imagens na 
 ```
 vim /path_to/pf_rmi_17.py
 
-n_particles          # número de particulas
+n_particles          # número de partículas
 linear_mov           # movimentação linear (metros) para atualização do filtro
 angular_mov          # movimentação angular para atualização do filtro
 laser_max_distance   # leitura máxima do laser (metros)
