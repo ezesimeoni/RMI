@@ -76,7 +76,7 @@ CTRL+C para interromper a execução
 
 4. Insira goals no rviz (2D Nav Goal) para movimentar o robô, e veja o filtro de partículas se atualizando conforme o robô se movimenta  <br/><t/>Dica: para uma melhor visualização deve-se remover o PoseArray AMCL carregado por default em Stage
 </br>
-<b><i>Obs.</i></b> O projeto está arquiteturado para ser rodado também diretamente no ROS via catkin. Apenas siga os passos do ROS catkin e cmake, conforme documentação [ROS Catkin](http://wiki.ros.org/catkin)
+<p><b><i>Obs.</i></b> O projeto está arquiteturado para ser rodado também diretamente no ROS via catkin. Apenas siga os passos do ROS catkin e cmake, conforme documentação do <a href="http://wiki.ros.org/catkin">ROS Catkin</a></p>
 
 #### Demos
 <i>Aconselhável alterar a qualidade para HD 720p</i>
