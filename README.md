@@ -6,13 +6,16 @@
 * [Matplotlib](https://matplotlib.org/)
 * Criar uma pasta chamada "output" no path onde o código se encontra
 ```
+-- Terminal
 cd /path_to_the_code
 mkdir output
 ```
 
 ### Variáveis que podem ser alteradas
 ```
-world_size       # tamanho do mapa
+vim /path_to/particlefiltersimple.py
+
+world_size       # tamanho do mapa (px)
 num_of_particles # número de partículas no ambiente
 num_obstacles    # número de obstaculos (Fake)
 steps            # número de movimentos do robô
@@ -50,7 +53,7 @@ rad                  # circunferência do filtro de partículas (metros
 ### Executando
 <i>Especificamente neste exemplo usaremos o Turtlebot porém o código pode ser rodado com qualquer robô que tenha odômetria e um laser instalado</i>
 
-1. Inicie o Turtlebot em Stage
+1. Abra o terminal e inicie o Turtlebot em Stage Mode
 ```
 roslaunch turtlebot_stage turtlebot_stage.lauch
 ```
@@ -58,7 +61,7 @@ roslaunch turtlebot_stage turtlebot_stage.lauch
 ```
 /particlecloud_rmi
 ```
-3. Rode o arquivo pf_rmi_17.py
+3. Abra o terminal e rode o arquivo pf_rmi_17.py
 ```
 cd /path_to_your_folder/scripts/
 python pf_rmi_17.py
