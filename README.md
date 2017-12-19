@@ -36,6 +36,17 @@ Você podera acompanhar a atualização do filtro pela criação das imagens na 
 * [Gazebo 6](http://gazebosim.org/download)
 * [Rviz](http://wiki.ros.org/rviz)
 
+### Variáveis que podem ser alteradas
+```
+vim /path_to/pf_rmi_17.py
+
+n_particles          # número de particulas
+linear_mov           # movimentação linear (metros) para atualização do filtro
+angular_mov          # movimentação angular para atualização do filtro
+laser_max_distance   # leitura máxima do laser (metros)
+rad                  # circunferência do filtro de partículas (metros)
+```
+
 ### Executando
 <i>Especificamente neste exemplo usaremos o Turtlebot porém o código pode ser rodado com qualquer robô que tenha odômetria e um laser instalado</i>
 
@@ -54,6 +65,7 @@ python pf_rmi_17.py
 
 CTRL+C para interromper a execução
 ```
+
 4. Insira goals no rviz (2D Nav Goal) para movimentar o robô, e veja o filtro de partículas se atualizando conforme o robô se movimenta  <br/><t/>Dica: para uma melhor visualização deve-se remover o PoseArray AMCL carregado por default em Stage
 </br>
 <b><i>Obs.</i></b> O projeto está arquiteturado para ser rodado também diretamente no ROS via catkin. Apenas siga os passos do ROS catkin e cmake, conforme documentação [ROS Catkin](http://wiki.ros.org/catkin)
