@@ -9,7 +9,7 @@
 ### Variaveis que podem ser alteradas
 ```
 world_size       # tamanho do mapa
-num_of_particles # numero de particulas no ambiente
+num_of_particles # numero de partículas no ambiente
 num_obstacles    # numero de obstaculos (Fake)
 steps            # numero de movimentos do robo
 ```
@@ -19,7 +19,9 @@ Para executar basta adicionar ao terminal o comando
 python particlefiltersimple.py
 ```
 Você podera acompanhar a execução pela criação das imagens na pasta output
-- O output terá imagens como a do <b>[Gif](https://imgflip.com/gif/211geq) aqui mostrado</b>
+
+#### Demo
+* [Gif](https://imgflip.com/gif/211geq)
 
 
 ## ParticleFilterROS
@@ -30,7 +32,7 @@ Você podera acompanhar a execução pela criação das imagens na pasta output
 * [Rviz](http://wiki.ros.org/rviz)
 
 ### Executando
-<i>Especificamente neste exemplo usaremos o Turtlebot porém o código pode ser rodado com qualquer robo que tenha odômetria e um laser instalado</i>
+<i>Especificamente neste exemplo usaremos o Turtlebot porém o código pode ser rodado com qualquer robô que tenha odômetria e um laser instalado</i>
 
 1. Inicie o Turtlebot em Stage
 ```
@@ -38,11 +40,20 @@ roslaunch turtlebot_stage turtlebot_stage.lauch
 ```
 2. Dentro do Rviz adicione um novo PoseArray e preencha o tópico com
 ```
-/pointcloud_rmi
+/particlecloud_rmi
 ```
-3. Rode o código pf_rmi_17.py
+3. Rode o arquivo pf_rmi_17.py
 ```
-cd /para/pasta/onde/esta/codigo
+cd /path_to_your_folder/scripts/
 python pf_rmi_17.py
 ```
-4. Insira goals para o robo e veja o filtro de partículas se movendo <br/><t/>Obs. Para uma melhor visualização deve-se remover o PoseArray AMCL carregado por default em Stage mode
+<i>Para interromper a execução CTRL+C</i></br></br>
+4. Insira goals no rviz (2D Nav Goal) para movimentar o robô, e veja o filtro de partículas se atualizando conforme o robô se movimenta  <br/><t/>Dica: para uma melhor visualização deve-se remover o PoseArray AMCL carregado por default em Stage
+</br>
+* <i>Obs. O projeto está arquiteturado para ser rodado também diretamente no ROS via catkin. Apenas siga os passo do ROS catkin e cmake conforme site do [ROS](http://wiki.ros.org/catkin)</i>
+
+#### Demos
+* [Filtro de Partículas com amostragem de 60 partículas](https://youtu.be/CEA7PzWgeRg)
+* [Filtro de Partículas com amostragem de 120 partículas](https://youtu.be/sSDb32Uu2Pc)
+* [Filtro de Partículas AMCL - Para Comparação](https://youtu.be/Emuxr_PubYA) - Padrão ROS (Sem mudanças)
+
