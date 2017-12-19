@@ -115,8 +115,8 @@ class ParticleFilter:
         for particle in self.particle_cloud:
             d = math.sqrt((delta[0]**2) + (delta[1]**2))
             # print 'particle_theta_1', particle.theta
-            particle.x += d * (math.cos(particle.theta) + normal(0,0.05))
-            particle.y += d * (math.sin(particle.theta) + normal(0,0.05))
+            particle.x += d * (math.cos(particle.theta) + normal(0,0.01))
+            particle.y += d * (math.sin(particle.theta) + normal(0,0.01))
             particle.theta = self.current_odom_xy_theta[2] #+ normal(0,0.05)
 
     # Systematic Resample
@@ -133,12 +133,10 @@ class ParticleFilter:
 
         positions = (np.arange(N) + random.random()) / N
 
-        indexes = np.zeros(N, 'i')
         cumulative_sum = np.cumsum(weights)
         i, j = 0, 0
         while i < N:
             if positions[i] < cumulative_sum[j]:
-                indexes[i] = j
                 newParticles.append(deepcopy(self.particle_cloud[j]))
                 i += 1
             else:
@@ -193,6 +191,9 @@ class ParticleFilter:
         if xy_theta == None:
             xy_theta = convert_pose_to_xy_and_theta(self.odom_pose.pose)
             x, y, theta = xy_theta
+        
+        # Altere este parametro para aumentar a circunferencia do filtro de particulas
+        # Na VM ate 1 e suportado
         rad = 0.5
 
         self.particle_cloud = []
