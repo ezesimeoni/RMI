@@ -48,7 +48,12 @@ linear_mov           # movimentação linear (metros) para atualização do
 angular_mov          # movimentação angular para atualização do filtro
 laser_max_distance   # leitura máxima do laser (metros)
 rad                  # circunferência do filtro de partículas (metros)
+
+--- Ruído
+particle.x += d * (math.cos(particle.theta) + normal(0,0.01))
+particle.y += d * (math.sin(particle.theta) + normal(0,0.01))
 ```
+Pode-se alterar o nível de ruído das partículas alterando os valores da expressão acima. Basta alterar os valores dentro da função <i><b>normal(0,0.01)</b></i> para por ex. <i><b>normal(0,0.1)</b></i>. Quanto maior o valor de saída, maior sera o nível de ruído da partícula
 
 ### Executando
 <i>Especificamente neste exemplo usaremos o Turtlebot porém o código pode ser rodado com qualquer robô que tenha odômetria e um laser instalado</i>
